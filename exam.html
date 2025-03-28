@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hi>Ya profe porfavor paseme</hi> 
+    
+<script>
+    function ejecutarejercicio(){
+switch(1){
+case 1:
+    indicarimc();
+//primer ejercicio
+function indicarimc(){
+    let peso = prompt("Ingrese su peso en kg:")
+    let altura = prompt("Ingrese su altura en metros:")
+    
+    if(isNaN(peso)|| isNaN(altura) || altura <= 0){
+        console.log("Datos invalidos")
+        return;
+    }
+    let imc = peso / (altura * altura)
+    let resultado;
+    if(imc < 18.5){
+        resultado = "Bajo de peso"
+    }else if (imc >= 18.5 && imc <= 24.9 ){
+        resultado = "Peso normal"
+    }else if (imc >= 25 && imc <= 29.9 ){
+        resultado = "Sobrepeso"
+    }else{
+        resultado = "Obeso"
+    }
+console.log("Su imc es: " + imc )
+console.log("Y su clasificacion es:" +resultado)
+}
+
+
+    break;
+case 2:
+    calcularPrecioFinal();
+    break;
+    case 3:
+        esPrimo();
+        break;
+        case 4:
+            numdivisible();
+            break;
+            case 5:
+                vocales();
+
+}
+}
+//primer ejercicio
+function indicarimc(){
+    let peso = prompt("Ingrese su peso en kg:")
+    let altura = prompt("Ingrese su altura en metros:")
+    
+    if(isNaN(peso)|| isNaN(altura) || altura <= 0){
+        console.log("Datos invalidos")
+        return;
+    }
+    let imc = peso / (altura * altura)
+    let resultado;
+    if(imc < 18.5){
+        resultado = "Bajo de peso"
+    }else if (imc >= 18.5 && imc <= 24.9 ){
+        resultado = "Peso normal"
+    }else if (imc >= 25 && imc <= 29.9 ){
+        resultado = "Sobrepeso"
+    }else{
+        resultado = "Obeso"
+    }
+console.log("Su imc es: " + imc )
+console.log("Y su clasificacion es:" +resultado)
+}
+// Ejercicio 2
+function calcularPrecioFinal(){
+    let precio = prompt("Ingrese el precio original del producto:")
+    let descuento = prompt("Ingrese el porcentaje de descuento:")
+    if (isNaN(precio)|| isNaN(descuento) || precio < 0 || descuento < 0){
+        console.log("Datos invalidos.")
+        return;
+    }
+    let preciofinal = precio - (precio * (descuento/100))
+    console.log('El precio final con el descuento aplicado es:' + preciofinal)
+}
+//Ejercicio 3
+function esPrimo(n) {
+            if (n < 2) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) return false;
+            }
+            return true;
+        }
+
+        function verificarPrimo() {
+            let numero = prompt("Ingrese un número para verificar si es primo:");
+            if (isNaN(numero) || numero < 0) {
+                console.log("Error: Número inválido para verificar primo");
+                return;
+            }
+            let resultado = esPrimo(numero) ? "Es primo" : "No es primo";
+            console.log("Número ingresado:" + numero + "- Resultado:" + resultado);
+            alert("Resultado: " + resultado);
+        }
+// Ejercicio 4
+function esDivisibleEntreDos() {
+            let numero = prompt("Ingrese un número para verificar si es divisible por 2:");
+            if (isNaN(numero)) {
+                console.log("Error: Número inválido");
+                alert("Por favor, ingrese un número válido.");
+                return;
+            }
+            let resultado = (numero % 2 === 0) ? "Es divisible por 2" : "No es divisible por 2";
+            console.log("Número ingresado:", numero, "- Resultado:", resultado);
+            alert("Resultado: " + resultado);
+        }
+        //Ejercicio 5
+        function obtenerVocales() {
+            let frase = prompt("Ingrese una frase:");
+            if (!frase) {
+                console.log("Error: Frase inválida");
+                alert("Por favor, ingrese una frase válida.");
+                return;
+            }
+                let vocales = frase.match(/[aeiou]/g);
+            let resultado = vocales ? vocales.join(", ") : "No se encontraron vocales";
+            console.log("Frase ingresada:", frase, "- Vocales encontradas:", resultado);
+            alert("Vocales en la frase: " + resultado);
+        }
+        //Ejercicio 6
+        function obtenerDia() {
+            const fechaInput = prompt("Introduce una fecha en formato YYYY-MM-DD:");
+            const fecha = new Date(fechaInput);
+            const dias = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+            if (isNaN(fecha)) {
+                console.log("Fecha no válida. Intenta de nuevo.");
+            } else {
+                const diaSemana = fecha.getDay();
+                console.log("El día de la semana es: " + dias[diaSemana]);
+            }
+        }
+        //Ejercicio 7
+        function mostrarTabla() {
+            const numero = prompt("¿Qué tabla de multiplicar quieres ver? (1-10)");
+            const num = parseInt(numero);
+            if (isNaN(num) || num < 1 || num > 10) {
+                console.log("Por favor, ingresar un número entre 1 y 10.");
+            } else {
+                console.log("Tabla de multiplicar del " + num + ":");
+                for (let i = 1; i <= 10; i++) {
+                    console.log(num + " x " + i + " = " + (num * i));
+                }
+            }
+        }
+        //Ejercicio 8
+        function comprobarRango() {
+            const num1 = prompt("Introduce el primer número:");
+            const num2 = prompt("Introduce el segundo número:");
+            if (num1 >= 100 && num1 <= 200 && num2 >= 100 && num2 <= 200) {
+                console.log("Sí, ambos números están entre 100 y 200.");
+            } else {
+                console.log("No, ninguno de los números no está entre 100 y 200.");
+            }
+        }
+        // Ejercicio 9
+        function calcularAreaTriangulo() {
+            const cateto1 = prompt("Introduce el valor del primer cateto:");
+            const cateto2 = prompt("Introduce el valor del segundo cateto:");
+            const area = (cateto1 * cateto2) / 2;
+            console.log("El área del triángulo rectángulo es: " + area);
+        }
+      // Ejercicio 10
+      function contrasenaValida() {
+            const contrasena1 = "2Fj(jjbFsuj";
+            const contrasena2 = "eoZiugBf&g9";
+            const contrasena = prompt("Introduce tu contraseña:");
+            if (contrasena === contrasena1 || contrasena === contrasena2) {
+                console.log("Contraseña válida.");
+                return true;
+            } else {
+                console.log("Contraseña incorrecta.");
+                return false;
+            }
+        }
+        // Ejercicio 11
+        function calcularImpuestos() {
+            const edad = prompt("Introduce tu edad:");
+            const ingresos = prompt("Introduce tus ingresos:");
+            if (edad >= 18 && ingresos >= 1000) {
+                const impuestos = ingresos * 0.40;  
+                console.log("El impuesto a pagar es: " + impuestos);
+                return impuestos;
+            } else {
+                console.log("No debes pagar impuestos.");
+                return 0; 
+            }
+        }
+// Ejercicio 12
+function imprimirArreglo() {
+            const entrada = prompt("Introduce los elementos del arreglo separados por comas:");
+            const arreglo = entrada.split(",");
+            for (let i = 0; i < arreglo.length; i++) {
+                console.log(arreglo[i].trim()); 
+            }
+        }
+       // Ejercicio 13
+      function likes() {
+            // Pedir al usuario que ingrese un número
+            const numero = prompt("Introduce un número:");
+
+            if (numero < 1000) {
+                console.log(numero.toString());
+            } else if (numero >= 1000 && numero < 1000000) {
+                console.log((numero / 1000).toFixed(0) + "K"); 
+            } else {
+                console.log((numero / 1000000).toFixed(0) + "M");  
+            }
+        }
+        // Ejercicio 14
+        function contarRango() {
+            const num1 = prompt("Introduce el primer número:");
+            const num2 = prompt("Introduce el segundo número:");
+            let contador = 0;
+            for (let i = num1 + 1; i < num2; i++) {
+                contador++;
+            }
+            console.log("La cantidad de números entre " + num1 + " y " + num2 + " (excluyéndolos) es: " + contador);
+        }
+       // EJERCICIO 15
+       function sumarRango() {
+            const numInicial = parseInt(prompt("Introduce el número inicial:"));
+            const numFinal = parseInt(prompt("Introduce el número final:"));
+            let suma = 0;
+            if (isNaN(numInicial) || isNaN(numFinal)) {
+                console.log("Por favor, ingresa números válidos.");
+                return;
+            }
+            for (let i = numInicial; i <= numFinal; i++) {
+                suma += i;
+            }
+            console.log("La suma de los números entre " + numInicial + " y " + numFinal + " (incluyéndolos) es: " + suma);
+        }
+        // EJERCICIO 16
+        function numeroDeAes() {
+            const texto = prompt("Introduce un texto:");
+            let contador = 0;
+            const textoMinusculas = texto.toLowerCase();
+            for (let i = 0; i < textoMinusculas.length; i++) {
+                if (textoMinusculas[i] === 'a') {
+                    contador++;
+                }
+            }
+            console.log("La letra 'a' aparece " + contador + " veces en el texto.");
+        }
+       // EJERCICIO 17
+       function numeroDeCaracteres() {
+         
+            const texto = prompt("Introduce un texto:");
+            const caracter = prompt("Introduce el carácter a contar:");
+            let contador = 0;
+            for (let i = 0; i < texto.length; i++) {
+                if (texto[i] === caracter) {
+                    contador++;
+                }
+            }
+            console.log("El carácter '" + caracter + "' aparece " + contador + " veces en el texto.");
+        }
+        // EJERCICIO 18
+        function sumarArreglo() {
+            const input = prompt("Introduce los números del arreglo, separados por comas:");
+            const arreglo = input.split(",").map(num => parseFloat(num.trim()));
+            let suma = 0;
+            for (let i = 0; i < arreglo.length; i++) {
+                suma += arreglo[i];
+            }
+            console.log("La suma de los elementos del arreglo es: " + suma);
+        }
+        // EJERCICIO 19
+        function transcribir() {
+            const adn = prompt("Introduce una cadena de ADN:");
+            let arn = "";
+            for (let i = 0; i < adn.length; i++) {
+                switch (adn[i]) {
+                    case 'G':
+                        arn += 'C';
+                        break;
+                    case 'C':
+                        arn += 'G';
+                        break;
+                    case 'T':
+                        arn += 'A';
+                        break;
+                    case 'A':
+                        arn += 'U';
+                        break;
+                    default:
+                        arn += '';  
+                        break;
+                }
+            }
+            console.log("El ARN complementario es: " + arn);
+        }
+        // EJERCICIO 20
+        function capitalizar() {
+            const texto = prompt("Introduce un texto:");
+            if (texto.length === 0) {
+                console.log("El texto está vacío.");
+                return;
+            }
+            const textoCapitalizado = texto.charAt(0).toUpperCase() + texto.slice(1);
+            console.log("Texto con la primera letra capitalizada: " + textoCapitalizado);
+        }
+        // EJERCICIO 21
+        function password() {
+            const texto = prompt("Introduce un texto para generar la contraseña:");
+            let nuevaContraseña = texto.toLowerCase()
+            .replace(/\s+/g, '') 
+            .replace(/a/g, '4') 
+            .replace(/e/g, '3') 
+            .replace(/i/g, '1') 
+            .replace(/o/g, '0');   
+            console.log("La nueva contraseña generada es: " + nuevaContraseña);
+        }
+        // EJERCICIO 22
+        function mostrarLista() {
+            const valor = parseInt(prompt("Introduce un valor entero:"));
+            if (isNaN(valor)) {
+                console.log("Por favor, introduce un valor entero válido.");
+                return;
+            }
+            let lista = [];
+            for (let i = 0; i <= valor; i++) {
+                lista.push(i);
+            }
+            console.log(lista.join(", "));
+        }
+    // EJERCICIO 23
+    function cuentaAtras() {
+        const numero = parseInt(prompt("Introduce un número para la cuenta atrás:"));
+        if (isNaN(numero)) {
+                console.log("Por favor, introduce un número válido.");
+                return;
+        }
+        let cuenta = [];
+        for (let i = numero; i >= 0; i--) {
+                cuenta.push(i);
+            }
+            console.log(cuenta.join(", "));
+        }
+        // EJERCICIO 24
+        function generarPiramide() {
+            const lineas = prompt("Introduce el número de líneas para la pirámide:");
+            if (isNaN(lineas) || lineas <= 0) {
+                console.log("Por favor, introduce un número válido mayor que 0.");
+                return;
+            }
+            for (let i = 1; i <= lineas; i++) {
+                let espacio = " ".repeat(lineas - i);  
+                let asteriscos = "*".repeat(2 * i - 1);  
+                console.log(espacio + asteriscos);  
+            }
+        }
+// EJERCICIO 25
+function continuar() {
+            let respuesta = prompt("¿Deseas continuar con el programa? (s/n)");
+            while (respuesta.toLowerCase() !== 'n') {
+                if (respuesta.toLowerCase() === 's') {
+                    console.log("El programa continúa.");
+                    break;
+                } else {
+                    respuesta = prompt("Por favor, responde con 's' para continuar o 'n' para finalizar.");
+                }
+            }
+            if (respuesta.toLowerCase() === 'n') {
+                console.log("El programa ha finalizado.");
+            }
+        }
+        // EJERCICIO 26
+        function mostrarMenu() {
+            let opcion;
+            do {
+                opcion = prompt("1- Leer datos\n2- Mostrar datos\n3- Fin");
+                if (opcion == 1) {
+                    console.log("Opción elegida: Leer datos");
+                } else if (opcion == 2) {
+                    console.log("Opción elegida: Mostrar datos");
+                } else if (opcion == 3) {
+                    console.log("Fin");
+                    break;
+                } else {
+                    console.log("Opción incorrecta. Intenta de nuevo.");
+                }
+            } while (opcion != 3);
+        }
+        // EJERCICIO27
+        let contador = 1;
+        while (contador <= 10) {
+            console.log(contador);
+            contador++;
+        }
+        //Ejercicio28
+        function calcularFactorial(n) {
+            let factorial = 1;
+            for (let i = 1; i <= n; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
+        const numero = 5;
+        const resultado = calcularFactorial(numero);
+        console.log("El factorial de " + numero + " es: " + resultado);
+//Ejercicio 29
+function verificarArmstrong() {
+            const numero = parseInt(prompt("Introduce un número para verificar si es de Armstrong:"));
+            const numStr = numero.toString();
+            const numLength = numStr.length;
+
+            let suma = 0;
+            for (let i = 0; i < numLength; i++) {
+                suma += Math.pow(parseInt(numStr[i]), numLength);
+            }
+            if (suma === numero) {
+                console.log(numero + " es un número de Armstrong.");
+            } else {
+                console.log(numero + " no es un número de Armstrong.");
+            }
+        }
+        verificarArmstrong()
+      // EJERCICIO 30
+      function posicionCaracter() {
+            const texto = prompt("Introduce una cadena de texto:");
+            const caracter = prompt("Introduce el carácter que deseas buscar:");
+            if (caracter.length !== 1) {
+                console.log("Por favor, introduce un solo carácter.");
+                return;
+            }
+            const posicion = texto.indexOf(caracter);
+            if (posicion !== -1) {
+                console.log(`El carácter '${caracter}' se encuentra en la posición ${posicion}.`);
+            } else {
+                console.log(`El carácter '${caracter}' no se encuentra en el texto.`);
+            }
+        }
+       generarPiramide()
+</script>
+
+
+</body>
+</html>

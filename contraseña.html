@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hi>Se fue la luz, me quiero ir a mi casita, mamita ven por mi</hi> 
+    <script>
+ let contraseñacorrecta = "hola"
+ let intentos = 0;
+let contraseña;
+
+  while(intentos < 3 && contraseña !== contraseñacorrecta){
+    contraseña = prompt("Por favor ingrese la contraseña:")
+    if (contraseña === contraseñacorrecta){
+      console.log("Acceso concedido");
+
+    }else{
+      intentos ++;
+      alert("Contraseña incorrecta. Intento" + intentos + " de 3 ")
+      console.log("Alerta, intruso!");
+    }
+   
+  }
+  
+
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+if (condition) {
+// Block of code
+}
+
+//Condicional doble sintaxis
+if (condition){
+    //block of code
+    //Execute this if condition is true
+}
+else{
+    //Block of code
+    //execute this if condition is false
+}
+
+// check for first condition
+if (condition){
+    //if body
+}
+// check for second condition
+else if (condition2){
+    // else if body
+}
+// if no condition matches
+else{
+    // else body
+}
+
